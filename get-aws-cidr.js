@@ -10,7 +10,7 @@ http.get("https://ip-ranges.amazonaws.com/ip-ranges.json", function(res){
 
     res.on('end', function(){
         var response = JSON.parse(body).prefixes;
-        console.log (response.length)
+        
         response.forEach (function (item) {
         	if (item.region === region) {
         		console.log (item.ip_prefix)
